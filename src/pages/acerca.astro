@@ -1,0 +1,23 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import AboutHero from "@/components/about/AboutHero";
+import BioAndTimeline from "@/components/about/Timeline";
+import {
+  AwardsGrid,
+  PhilosophySection,
+  SpecialtyAreasSection,
+  InsurancesSection,
+} from "@/components/about/AwardsGrid";
+---
+
+<Layout
+  title="Dr. Daniel Hernández Coronado — Acerca del Doctor | Traumatólogo Monterrey"
+  description="Conozca la trayectoria, formación académica, especialidades y filosofía de atención del Dr. Daniel Hernández Coronado, Traumatólogo y especialista en columna vertebral en Monterrey."
+>
+  <AboutHero client:load />
+  <BioAndTimeline client:visible />
+  <AwardsGrid client:visible />
+  <PhilosophySection client:visible />
+  <SpecialtyAreasSection client:visible />
+  <InsurancesSection client:visible />
+</Layout>

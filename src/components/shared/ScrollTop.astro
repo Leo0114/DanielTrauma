@@ -1,33 +1,29 @@
+<!-- ScrollTop.astro — Botón flotante para volver al inicio -->
 <button
   id="scroll-to-top"
-  aria-label="Volver arriba"
-  class="fixed bottom-8 right-8 z-50 flex h-12 w-12 translate-y-20 cursor-pointer items-center justify-center rounded-full bg-ink text-canvas opacity-0 shadow-lg transition-all duration-300 hover:scale-105 hover:bg-strategic focus:outline-none"
+  aria-label="Volver al inicio de la página"
+  class="fixed bottom-8 right-8 z-50 flex h-12 w-12 translate-y-20 cursor-pointer items-center justify-center rounded-full bg-primary text-white opacity-0 shadow-lg shadow-primary/30 transition-all duration-300 hover:scale-110 hover:bg-primary-dark hover:shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 pointer-events-none"
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    class="h-6 w-6"
+    class="h-5 w-5"
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
-    stroke-width="2"
+    stroke-width="2.5"
+    aria-hidden="true"
   >
-    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"
-    ></path>
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"></path>
   </svg>
 </button>
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    // Escucha scroll a nivel de window y actualiza la clase
     const handleScroll = () => {
       const btn = document.getElementById("scroll-to-top");
       if (!btn) return;
       if (window.scrollY > 300) {
-        btn.classList.remove(
-          "opacity-0",
-          "translate-y-20",
-          "pointer-events-none",
-        );
+        btn.classList.remove("opacity-0", "translate-y-20", "pointer-events-none");
         btn.classList.add("opacity-100", "translate-y-0");
       } else {
         btn.classList.add("opacity-0", "translate-y-20", "pointer-events-none");
@@ -35,13 +31,11 @@
       }
     };
 
-    // Almacenar función p/ poder remover pero en page-load sólo reevaluamos
     window.removeEventListener("scroll", handleScroll);
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // init state
+    handleScroll();
   });
 
-  // Evento delegado a nivel document para sobrevivir a transiciones de vista (si corre 1 vez)
   document.addEventListener("click", (e) => {
     const target = e.target as Element;
     if (target.closest("#scroll-to-top")) {

@@ -1,10 +1,21 @@
 ---
-import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "@/layouts/Layout.astro";
+import HeroSection from "@/components/home/HeroSection";
+import StatsSection from "@/components/home/StatsSection";
+import MythSection from "@/components/home/MythSection";
+import SpecialtiesSection from "@/components/home/SpecialtiesSection";
+import ServicesSection from "@/components/home/ServicesSection";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
 ---
 
-<Layout>
-  <h1>Hola Mundo</h1>
+<Layout
+  title="Dr. Daniel Hernández Coronado — Traumatólogo y Ortopedista en Monterrey"
+  description="Especialista en Traumatología, Ortopedia y Cirugía de Columna Vertebral en Monterrey, N.L. Más de 15 años de experiencia. Sin compromiso quirúrgico. Agenda tu consulta hoy."
+>
+  <HeroSection client:load />
+  <StatsSection client:visible />
+  <MythSection client:visible />
+  <SpecialtiesSection client:visible />
+  <ServicesSection client:visible />
+  <TestimonialsSection client:visible />
 </Layout>

@@ -2,29 +2,98 @@
 import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
 import { SEO } from "astro-seo";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import ScrollTop from "../components/shared/ScrollTop.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const {
+  title = "Dr. Daniel Hernández Coronado — Traumatólogo y Ortopedista en Monterrey",
+  description = "Especialista en Traumatología, Ortopedia y Cirugía de Columna Vertebral en Monterrey. Dr. Daniel Hernández Coronado. Agenda tu consulta: +52 81 8022 9071",
+  image = "/og-image.jpg",
+  noindex = false,
+} = Astro.props;
+
+const siteUrl = "https://drhernandezcoronado.com";
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
+
+    <!-- Anti-flash theme script -->
+    <script is:inline>
+      (function () {
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = stored || (prefersDark ? "dark" : "light");
+        document.documentElement.classList.toggle("dark", theme === "dark");
+      })();
+    </script>
+
+    <!-- SEO -->
+    <SEO
+      title={title}
+      description={description}
+      canonical={canonicalUrl}
+      noindex={noindex}
+      openGraph={{
+        basic: {
+          title,
+          type: "website",
+          image: `${siteUrl}${image}`,
+          url: canonicalUrl,
+        },
+        optional: {
+          description,
+          locale: "es_MX",
+          siteName: "Dr. Daniel Hernández Coronado",
+        },
+      }}
+      twitter={{
+        card: "summary_large_image",
+        title,
+        description,
+        image: `${siteUrl}${image}`,
+      }}
+      extend={{
+        meta: [
+          { name: "generator", content: Astro.generator },
+          { name: "author", content: "Dr. Daniel Hernández Coronado" },
+          { name: "robots", content: noindex ? "noindex, nofollow" : "index, follow" },
+          { name: "theme-color", content: "#06b6d4" },
+        ],
+        link: [
+          { rel: "preconnect", href: "https://fonts.googleapis.com" },
+          {
+            rel: "preconnect",
+            href: "https://fonts.gstatic.com",
+            crossorigin: "anonymous",
+          },
+        ],
+      }}
+    />
+
     <ClientRouter />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
   </head>
   <body>
-    <slot />
+    <Navbar />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+    <ScrollTop />
   </body>
 </html>
-
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-</style>
