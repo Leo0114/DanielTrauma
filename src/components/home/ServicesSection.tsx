@@ -11,10 +11,18 @@ const iconPaths: Record<string, string> = {
 export default function ServicesSection() {
   return (
     <section
-      className="py-20 md:py-28 bg-white dark:bg-dark-bg"
-      aria-label="Servicios médicos"
+      className="relative py-20 md:py-28 overflow-hidden bg-white dark:bg-dark-bg"
+      aria-label="Servicios"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Background Image & Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-fixed bg-center opacity-10 dark:opacity-20 pointer-events-none"
+        style={{ backgroundImage: "url('/images/bone2.avif')" }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-white/90 dark:bg-dark-bg/90 pointer-events-none" aria-hidden="true" />
+      
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <ScrollReveal direction="up">
           <div className="text-center mb-16">

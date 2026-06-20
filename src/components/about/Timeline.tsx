@@ -76,10 +76,17 @@ export default function BioAndTimeline() {
 
       {/* Timeline Section */}
       <section
-        className="py-20 md:py-24 bg-white dark:bg-dark-bg"
+        className="relative py-20 md:py-24 bg-white dark:bg-dark-bg overflow-hidden"
         aria-label="Formación académica"
       >
-        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Background Image */}
+        <div
+          className="absolute inset-0 bg-cover bg-fixed bg-center opacity-10 dark:opacity-10 pointer-events-none"
+          style={{ backgroundImage: "url('/images/verticalImage.avif')" }}
+          aria-hidden="true"
+        />
+
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           <ScrollReveal direction="up">
             <div className="text-center mb-16">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 dark:bg-primary/20 border border-primary/20 text-sm font-semibold text-primary font-body mb-4">

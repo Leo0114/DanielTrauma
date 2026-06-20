@@ -210,10 +210,17 @@ export function SpecialtyAreasSection() {
 export function InsurancesSection() {
   return (
     <section
-      className="py-16 md:py-20 bg-white dark:bg-dark-bg"
+      className="relative py-16 md:py-20 bg-white dark:bg-dark-bg overflow-hidden"
       aria-label="Aseguradoras aceptadas"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-fixed bg-center opacity-5 dark:opacity-[0.03] pointer-events-none"
+        style={{ backgroundImage: "url('/images/bone1.avif')" }}
+        aria-hidden="true"
+      />
+      
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal direction="up">
           <div className="text-center mb-10">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 dark:bg-primary/20 border border-primary/20 text-sm font-semibold text-primary font-body mb-4">

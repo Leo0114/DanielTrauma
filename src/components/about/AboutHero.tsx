@@ -27,15 +27,11 @@ export default function AboutHero() {
               <div className="absolute -inset-4 rounded-3xl border-2 border-primary/10 dark:border-primary/20" aria-hidden="true" />
               {/* Photo area */}
               <div className="relative aspect-[3/4] rounded-3xl bg-surface dark:bg-dark-card border border-border dark:border-dark-border overflow-hidden flex flex-col items-center justify-center gap-5">
-                <div className="w-28 h-28 rounded-full bg-primary/10 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-14 h-14 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1} aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </div>
-                <div className="text-center px-8">
-                  <p className="font-display font-bold text-secondary dark:text-white">{aboutHero.name}</p>
-                  <p className="text-sm text-text-muted dark:text-slate-400 font-body mt-1">Foto profesional — próximamente</p>
-                </div>
+                <img
+                  src="/images/draw.avif"
+                  alt="Dr. Daniel Hernández Coronado"
+                  className="w-full h-full object-cover object-center"
+                />
                 {/* Cedula badge */}
                 <div className="absolute bottom-5 left-5 right-5 bg-white dark:bg-dark-surface rounded-xl p-3 shadow-md border border-border dark:border-dark-border">
                   <div className="flex items-center gap-2">

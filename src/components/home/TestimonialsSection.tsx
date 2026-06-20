@@ -89,11 +89,16 @@ export default function TestimonialsSection() {
 
       {/* CTA Section */}
       <section
-        className="py-20 md:py-28 bg-gradient-to-br from-secondary via-secondary to-primary/70 text-white relative overflow-hidden"
+        className="py-20 md:py-28 bg-secondary text-white relative overflow-hidden"
         aria-label="Llamado a la acción"
       >
         <div
-          className="absolute inset-0 pointer-events-none"
+          className="absolute inset-0 bg-cover bg-fixed bg-center opacity-30 mix-blend-overlay pointer-events-none"
+          style={{ backgroundImage: "url('/images/columna.avif')" }}
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-secondary/90 via-secondary/80 to-primary/80 pointer-events-none"
           aria-hidden="true"
         >
           <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-primary/10 blur-3xl" />

@@ -8,10 +8,17 @@ export function FAQSection() {
 
   return (
     <section
-      className="py-16 md:py-20 bg-surface dark:bg-dark-surface"
+      className="relative py-16 md:py-20 bg-surface dark:bg-dark-surface overflow-hidden"
       aria-label="Preguntas frecuentes"
     >
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-fixed bg-center opacity-20 dark:opacity-10 pointer-events-none"
+        style={{ backgroundImage: "url('/images/contact.avif')" }}
+        aria-hidden="true"
+      />
+
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal direction="up">
           <div className="text-center mb-12">
             <h2 className="font-display text-2xl sm:text-3xl font-bold text-secondary dark:text-white mb-3">
@@ -252,9 +259,20 @@ export function OfficesSection() {
 export function ContactHero() {
   return (
     <section
-      className="py-16 md:py-24 bg-gradient-to-br from-secondary via-secondary to-primary/60 text-white relative overflow-hidden"
+      className="py-16 md:py-24 bg-secondary text-white relative overflow-hidden"
       aria-label="Encabezado de contacto"
     >
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-fixed bg-center opacity-30 mix-blend-overlay pointer-events-none"
+        style={{ backgroundImage: "url('/images/contacto.avif')" }}
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-br from-secondary/90 via-secondary/80 to-primary/80 pointer-events-none"
+        aria-hidden="true"
+      />
+
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-accent/5 blur-3xl" />

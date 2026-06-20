@@ -187,31 +187,11 @@ export default function HeroSection() {
             <div className="relative w-full aspect-[3/4] max-w-md mx-auto">
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/10 via-transparent to-accent/10 dark:from-primary/20 dark:to-accent/20" />
               <div className="relative w-full h-full rounded-3xl bg-surface dark:bg-dark-card border border-border dark:border-dark-border overflow-hidden flex flex-col items-center justify-center gap-4">
-                {/* Medical cross icon */}
-                <div className="w-24 h-24 rounded-full bg-primary/10 flex items-center justify-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-12 h-12 text-primary"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={1.5}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4.5 12.75l6 6 9-13.5"
-                    />
-                  </svg>
-                </div>
-                <div className="text-center px-6">
-                  <p className="font-display font-bold text-lg text-secondary dark:text-white">
-                    Dr. Daniel Hernández C.
-                  </p>
-                  <p className="text-sm text-text-muted dark:text-slate-400 font-body mt-1">
-                    Foto del doctor — próximamente
-                  </p>
-                </div>
+                <img
+                  src="/images/draw.avif"
+                  alt="Dr. Daniel Hernández Coronado"
+                  className="w-full h-full object-cover object-center"
+                />
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="bg-white dark:bg-dark-surface rounded-2xl p-4 shadow-lg border border-border dark:border-dark-border">
                     <div className="flex items-center gap-3">
