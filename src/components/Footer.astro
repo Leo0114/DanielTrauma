@@ -41,7 +41,9 @@ const currentYear = new Date().getFullYear();
           </div>
         </a>
         <p class="text-slate-300 text-sm leading-relaxed font-body mb-6">
-          Especialista en Traumatología, Ortopedia y Cirugía de Columna Vertebral en Monterrey, N.L. Atención médica de excelencia con enfoque humano.
+          Especialista en Traumatología, Ortopedia y Cirugía de Columna
+          Vertebral en Monterrey, N.L. Atención médica de excelencia con enfoque
+          humano.
         </p>
 
         <!-- Contact quick links -->
@@ -115,7 +117,9 @@ const currentYear = new Date().getFullYear();
 
       <!-- Navigation -->
       <div>
-        <h3 class="font-display font-semibold text-sm text-white uppercase tracking-widest mb-5">
+        <h3
+          class="font-display font-semibold text-sm text-white uppercase tracking-widest mb-5"
+        >
           Navegación
         </h3>
         <ul class="space-y-3" role="list">
@@ -144,16 +148,16 @@ const currentYear = new Date().getFullYear();
 
       <!-- Specialties -->
       <div>
-        <h3 class="font-display font-semibold text-sm text-white uppercase tracking-widest mb-5">
+        <h3
+          class="font-display font-semibold text-sm text-white uppercase tracking-widest mb-5"
+        >
           Especialidades
         </h3>
         <ul class="space-y-3" role="list">
           {
             specialties.map((spec) => (
               <li>
-                <span class="text-sm text-slate-300 font-body">
-                  {spec}
-                </span>
+                <span class="text-sm text-slate-300 font-body">{spec}</span>
               </li>
             ))
           }
@@ -162,11 +166,14 @@ const currentYear = new Date().getFullYear();
 
       <!-- CTA -->
       <div>
-        <h3 class="font-display font-semibold text-sm text-white uppercase tracking-widest mb-5">
+        <h3
+          class="font-display font-semibold text-sm text-white uppercase tracking-widest mb-5"
+        >
           ¿Listo para consultar?
         </h3>
         <p class="text-sm text-slate-300 font-body mb-6 leading-relaxed">
-          No espere más para atender su dolor o lesión. Agende su cita hoy y reciba orientación médica especializada.
+          No espere más para atender su dolor o lesión. Agende su cita hoy y
+          reciba orientación médica especializada.
         </p>
         <a
           href="/contacto"
@@ -187,7 +194,9 @@ const currentYear = new Date().getFullYear();
           aria-label="Ver perfil en Doctoralia"
         >
           <div class="w-2 h-2 rounded-full bg-green-400 flex-shrink-0"></div>
-          <span class="text-xs text-slate-400 group-hover:text-slate-300 transition-colors font-body">
+          <span
+            class="text-xs text-slate-400 group-hover:text-slate-300 transition-colors font-body"
+          >
             Verificado en Doctoralia
           </span>
         </a>
@@ -202,10 +211,17 @@ const currentYear = new Date().getFullYear();
         class="py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-body"
       >
         <p>
-          © {currentYear} Dr. Daniel Hernández Coronado — Todos los derechos reservados.
+          © {currentYear} Dr. Daniel Hernández Coronado — Made by <a
+            href="https://www.optimmkt.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-primary dark:text-primary-dark hover:text-primary-light"
+            >optim</a
+          >
         </p>
         <p class="text-center">
-          Monterrey, Nuevo León, México · Traumatología y Ortopedia · Cirugía de Columna
+          Monterrey, Nuevo León, México · Traumatología y Ortopedia · Cirugía de
+          Columna
         </p>
       </div>
     </Container>
