@@ -8,15 +8,9 @@ export function FAQSection() {
 
   return (
     <section
-      className="relative py-16 md:py-20 bg-surface dark:bg-dark-surface overflow-hidden"
+      className="py-16 md:py-20 bg-surface dark:bg-dark-surface"
       aria-label="Preguntas frecuentes"
     >
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-fixed bg-center opacity-20 dark:opacity-10 pointer-events-none"
-        style={{ backgroundImage: "url('/images/contact.avif')" }}
-        aria-hidden="true"
-      />
 
       <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal direction="up">
@@ -263,9 +257,10 @@ export function ContactHero() {
       aria-label="Encabezado de contacto"
     >
       {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-fixed bg-center opacity-30 mix-blend-overlay pointer-events-none"
-        style={{ backgroundImage: "url('/images/contacto.avif')" }}
+      <img
+        src="/images/contacto.avif"
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover object-center opacity-30 mix-blend-overlay pointer-events-none"
         aria-hidden="true"
       />
       <div
